@@ -52,7 +52,7 @@ def resolve_url(url, stream=False):
             # uri = 'youtube:video/%s.%s' % (
                 # safe_url(video.title), video.videoid
             # )
-            uri = video.videoid
+            uri = 'yt:%s' % (video.videoid)
         else:
             uri = video.getbestaudio()
             if not uri:  # get video url
