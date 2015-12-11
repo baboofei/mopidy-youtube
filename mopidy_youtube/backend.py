@@ -49,9 +49,10 @@ def resolve_url(url, stream=False):
     try:
         video = pafy.new(url)
         if not stream:
-            uri = 'youtube:video/%s.%s' % (
-                safe_url(video.title), video.videoid
-            )
+            # uri = 'youtube:video/%s.%s' % (
+                # safe_url(video.title), video.videoid
+            # )
+            uri = video.videoid
         else:
             uri = video.getbestaudio()
             if not uri:  # get video url
